@@ -2,6 +2,7 @@ site_name: PyBlog
 site_description: A lightweight developer blog
 site_url: https://Hermit-commits-code.github.io/pyblog
 repo_url: https://github.com/Hermit-commits-code/pyblog
+use_directory_urls: true
 nav:
   - Home: index.md
   - Posts:

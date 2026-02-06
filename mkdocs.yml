@@ -1,0 +1,21 @@
+site_name: PyBlog
+site_description: A lightweight developer blog
+site_url: https://Hermit-commits-code.github.io/pyblog
+repo_url: https://github.com/Hermit-commits-code/pyblog
+nav:
+  - Home: index.md
+  - Posts:
+    - "First Post": posts/first-post.md
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: teal
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Hermit-commits-code/pyblog

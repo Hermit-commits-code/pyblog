@@ -3,6 +3,14 @@ site_description: A lightweight developer blog
 site_url: https://Hermit-commits-code.github.io/pyblog
 repo_url: https://github.com/Hermit-commits-code/pyblog
 use_directory_urls: true
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - rss:
+      limit: 20
+      description: "PyBlog posts"
 nav:
   - Home: index.md
   - Posts:

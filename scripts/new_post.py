@@ -31,8 +31,11 @@ def new_post(title: str, outdir: Path) -> Path:
     if path.exists():
         raise FileExistsError(f"Post already exists: {path}")
     content = f"""---
-title: {title}
+title: "{title}"
 date: {today}
+tags: []
+excerpt: ""
+draft: false
 ---
 
 # {title}

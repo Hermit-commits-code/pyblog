@@ -24,6 +24,8 @@ pytest-cov = "^4.0"
 pip-audit = "^2.0.0"
 mkdocs = "^1.5.2"
 mkdocs-material = "^9.0.0"
+mkdocs-rss-plugin = "*"
+mkdocs-git-revision-date-localized-plugin = "*"
 
 [tool.commitizen]
 name = "cz_conventional_commits"

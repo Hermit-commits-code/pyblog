@@ -4,6 +4,7 @@ title: Blog
 
 # Blog
 
-This is the blog index. Posts live under the `posts/` directory. The RSS feed is available at `/rss.xml` when the site is built.
+- **[First Post](posts/first-post.md)** — 2026-02-06
+- **[Example Post](posts/_post-template.md)** — 2026-01-01
 
-- [First Post](../posts/first-post.md)
+  A short summary goes here.

@@ -1,22 +1,40 @@
 /* Extra theme styles for PyBlog */
-:root{
-  --md-default-fg: #0f172a;
-  --md-primary-fg: #312e81;
+:root {
+    --md-default-fg: #0f172a;
+    --md-primary-fg: #312e81;
 }
 
 /* Post titles */
 .md-content h1 {
-  color: var(--md-primary-fg);
+    color: var(--md-primary-fg);
 }
 
 .post-meta {
-  color: #6b7280;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.post-header {
+    margin-bottom: 0.75rem;
+}
+
+.post-title {
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+}
+
+.post-tags .tag {
+    background: #eef2ff;
+    color: #312e81;
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+    font-size: 0.85rem;
 }
 
 /* Make images responsive */
 .md-content img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }

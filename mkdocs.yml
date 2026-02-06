@@ -20,6 +20,7 @@ theme:
   palette:
     primary: indigo
     accent: teal
+  custom_dir: overrides
 extra_css:
   - assets/stylesheets/extra.css
 extra:

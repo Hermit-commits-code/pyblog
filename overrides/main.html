@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{# Override the content block to render post metadata cleanly for blog posts #}
+{% block content %}
+  <div class="md-content">
+    {% if page.meta.title %}
+      <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+          {% if page.meta.date %}
+            <time class="post-date">{{ page.meta.date }}</time>
+          {% endif %}
+          {% if page.meta.tags %}
+            <span class="post-tags">{% for t in page.meta.tags %}<a class="tag" href="{{ base_url }}/search/?q=tags%3A{{ t }}">{{ t }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>
+          {% endif %}
+        </div>
+      </header>
+    {% endif %}
+
+    <article class="post-body">
+      {{ page.content }}
+    </article>
+  </div>
+{% endblock %}

@@ -33,6 +33,25 @@
     font-size: 0.85rem;
 }
 
+/* Pagination styling */
+.pagination {
+    margin-top: 1rem;
+}
+.pagination a {
+    color: var(--md-primary-fg);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background: #f8fafc;
+    margin-right: 0.5rem;
+}
+
+.tag-page-note {
+    color: #374151;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
 /* Make images responsive */
 .md-content img {
     max-width: 100%;

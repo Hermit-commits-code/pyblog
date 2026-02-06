@@ -52,6 +52,7 @@ tags: []
 excerpt: ""
 draft: false
 images: "{relative_assets}"
+og_image: "{relative_assets}/og.png"
 ---
 
 # {title}
@@ -61,6 +62,8 @@ Write your post here.
 You can add images into the `{relative_assets}` folder and reference them like:
 
 ![alt text]({{ site_url }}/{relative_assets}/image.png)
+
+Place a social preview at `{relative_assets}/og.png` to be used as the Open Graph image.
 
 """
     path.write_text(content, encoding="utf8")

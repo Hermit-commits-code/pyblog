@@ -15,6 +15,7 @@ nav:
   - Home: index.md
   - Posts:
       - "First Post": posts/first-post.md
+  - Zero-Knowledge Journal: zk-journal.md
 theme:
   name: material
   palette:

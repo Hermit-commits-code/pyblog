@@ -1,0 +1,22 @@
+/* Extra theme styles for PyBlog */
+:root{
+  --md-default-fg: #0f172a;
+  --md-primary-fg: #312e81;
+}
+
+/* Post titles */
+.md-content h1 {
+  color: var(--md-primary-fg);
+}
+
+.post-meta {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Make images responsive */
+.md-content img {
+  max-width: 100%;
+  height: auto;
+}

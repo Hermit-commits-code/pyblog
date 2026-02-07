@@ -1,0 +1,3 @@
+# Code owners for critical areas
+# Replace @Hermit-commits-code with your GitHub org/user
+/docs/posts/ @Hermit-commits-code

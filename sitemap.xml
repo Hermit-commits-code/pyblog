@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://Hermit-commits-code.github.io/pyblog/</loc>
-         <lastmod>2026-02-06</lastmod>
+         <lastmod>2026-02-07</lastmod>
     </url>
     <url>
          <loc>https://Hermit-commits-code.github.io/pyblog/blog/</loc>
-         <lastmod>2026-02-06</lastmod>
+         <lastmod>2026-02-07</lastmod>
+    </url>
+    <url>
+         <loc>https://Hermit-commits-code.github.io/pyblog/posts/2026-02-07-test-post/</loc>
+         <lastmod>2026-02-07</lastmod>
     </url>
     <url>
          <loc>https://Hermit-commits-code.github.io/pyblog/posts/_post-template/</loc>
-         <lastmod>2026-02-06</lastmod>
+         <lastmod>2026-02-07</lastmod>
     </url>
     <url>
          <loc>https://Hermit-commits-code.github.io/pyblog/posts/first-post/</loc>
-         <lastmod>2026-02-06</lastmod>
+         <lastmod>2026-02-07</lastmod>
     </url>
     <url>
          <loc>https://Hermit-commits-code.github.io/pyblog/tags/example/</loc>
-         <lastmod>2026-02-06</lastmod>
+         <lastmod>2026-02-07</lastmod>
     </url>
 </urlset>

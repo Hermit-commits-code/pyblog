@@ -8,6 +8,7 @@ Writes:
 Usage:
   python scripts/generate_index.py
 """
+
 from __future__ import annotations
 
 import sys
@@ -64,15 +65,15 @@ def find_posts() -> list[dict[str, Any]]:
             }
         )
     # sort by date desc, fallback to filename
-    posts.sort(key=lambda p: (p["date"] or datetime.min), reverse=True)
+    posts.sort(key=lambda p: p["date"] or datetime.min, reverse=True)
     return posts
 
 
 def render_index(posts: list[dict[str, Any]]) -> str:
     lines = ["---", "title: Blog", "---", "", "# Blog", ""]
     for p in posts:
-        # link relative to docs/ (MkDocs resolves from current folder)
-        link = str(p["path"]).replace("\\", "/")
+        # link from docs/blog/index.md -> posts/* : step up one level
+        link = "../" + str(p["path"]).replace("\\", "/")
         title = p["title"]
         date = p["date_str"]
         excerpt = p["excerpt"]
@@ -86,7 +87,8 @@ def render_index(posts: list[dict[str, Any]]) -> str:
 def render_tag(tag: str, posts: list[dict[str, Any]]) -> str:
     lines = ["---", f"title: Tags: {tag}", "---", "", f"# Tag: {tag}", ""]
     for p in posts:
-        link = str(p["path"]).replace("\\", "/")
+        # tag pages are in docs/tags/ so step up one level to reach posts
+        link = "../" + str(p["path"]).replace("\\", "/")
         title = p["title"]
         date = p["date_str"]
         lines.append(f"- **[{title}]({link})** — {date}")

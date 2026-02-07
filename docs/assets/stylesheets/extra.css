@@ -37,6 +37,7 @@
 .pagination {
     margin-top: 1rem;
 }
+
 .pagination a {
     color: var(--md-primary-fg);
     text-decoration: none;
@@ -50,6 +51,21 @@
     color: #374151;
     margin-top: 0.75rem;
     font-size: 0.95rem;
+}
+
+/* Tag list page */
+.tag-list-page .tag-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tag-list-page .tag-list li {
+    margin: 0.6rem 0;
+}
+
+.tag-list-page .tag-list a {
+    color: var(--md-primary-fg);
+    text-decoration: none;
 }
 
 /* Make images responsive */

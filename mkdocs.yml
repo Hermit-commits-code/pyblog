@@ -9,8 +9,7 @@ plugins:
       enable_creation_date: true
       fallback_to_build_date: true
   - rss:
-      limit: 20
-      description: "PyBlog posts"
+  - rss
 nav:
   - Home: index.md
   - Posts:

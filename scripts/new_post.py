@@ -7,9 +7,11 @@ Usage:
 This creates `docs/posts/YYYY-MM-DD-my-new-post-title.md` (default) or
 `docs/posts/<uuid>.md` when `--uuid` is used. Image directory is created if requested.
 """
+
 from __future__ import annotations
 
 import argparse
+import base64
 import re
 import sys
 from datetime import date
@@ -44,26 +46,34 @@ def new_post(
     else:
         assets_path = outdir / (fname[:-3] + "_assets")
     assets_path.mkdir(parents=True, exist_ok=True)
-    relative_assets = str(Path("posts") / assets_path.name)
+    # Write a small placeholder OG image if none exists (1x1 transparent PNG)
+    og_path = assets_path / "og.png"
+    if not og_path.exists():
+        png_b64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII="
+        og_path.write_bytes(base64.b64decode(png_b64))
+    # front-matter image path uses site-root-friendly path (posts/<assets>)
+    fm_images = f"posts/{assets_path.name}"
+    # but in-markdown example link should be relative so MkDocs link checker can resolve it
+    md_assets = assets_path.name
     content = f"""---
 title: "{title}"
 date: {today}
 tags: []
 excerpt: ""
 draft: false
-images: "{relative_assets}"
-og_image: "{relative_assets}/og.png"
+images: "{fm_images}"
+og_image: "{fm_images}/og.png"
 ---
 
 # {title}
 
 Write your post here.
 
-You can add images into the `{relative_assets}` folder and reference them like:
+You can add images into the `{md_assets}` folder and reference them like:
 
-![alt text]({{ site_url }}/{relative_assets}/image.png)
+![alt text]({md_assets}/image.png)
 
-Place a social preview at `{relative_assets}/og.png` to be used as the Open Graph image.
+Place a social preview at `{md_assets}/og.png` to be used as the Open Graph image.
 
 """
     path.write_text(content, encoding="utf8")

@@ -2,63 +2,68 @@
 
 {# Global meta overrides for social previews #}
 {% block meta %}
-  {{ super() }}
-  {% if page.title %}
-    <meta property="og:title" content="{{ page.title|e }}" />
-    <meta name="twitter:title" content="{{ page.title|e }}" />
-  {% endif %}
-  {% if page.meta.excerpt %}
-    <meta property="og:description" content="{{ page.meta.excerpt|e }}" />
-    <meta name="twitter:description" content="{{ page.meta.excerpt|e }}" />
-  {% endif %}
-  <meta property="og:type" content="article" />
-  {% if config.site_url and page.url %}
-    <meta property="og:url" content="{{ config.site_url.rstrip('/') }}/{{ page.url }}" />
-  {% endif %}
-  {% if page.meta.og_image %}
-    <meta property="og:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.og_image }}" />
-    <meta name="twitter:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.og_image }}" />
-  {% elif page.meta.images %}
-    <meta property="og:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.images }}/image.png" />
-    <meta name="twitter:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.images }}/image.png" />
-  {% endif %}
+{{ super() }}
+{% if page.title %}
+<meta property="og:title" content="{{ page.title|e }}" />
+<meta name="twitter:title" content="{{ page.title|e }}" />
+{% endif %}
+{% if page.meta.excerpt %}
+<meta property="og:description" content="{{ page.meta.excerpt|e }}" />
+<meta name="twitter:description" content="{{ page.meta.excerpt|e }}" />
+{% endif %}
+<meta property="og:type" content="article" />
+{% if config.site_url and page.url %}
+<meta property="og:url" content="{{ config.site_url.rstrip('/') }}/{{ page.url }}" />
+{% endif %}
+{% if page.meta.og_image %}
+<meta property="og:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.og_image }}" />
+<meta name="twitter:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.og_image }}" />
+{% elif page.meta.images %}
+<meta property="og:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.images }}/image.png" />
+<meta name="twitter:image" content="{{ config.site_url.rstrip('/') }}/{{ page.meta.images }}/image.png" />
+{% endif %}
 {% endblock %}
 
 {# Main content override: render posts and tag pages cleanly #}
 {% block content %}
-  <div class="md-content">
-    {% if page.meta.title %}
-      <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <div class="post-meta">
-          {% if page.meta.date %}
-            <time class="post-date">{{ page.meta.date }}</time>
-          {% endif %}
-          {% if page.meta.tags %}
-            <span class="post-tags">{% for t in page.meta.tags %}
-                <a class="tag" href="{{ base_url }}/tags/{{ t | replace(' ', '-') }}.html">{{ t }}</a>{% if not loop.last %}, {% endif %}
-              {% endfor %}</span>
-          {% endif %}
-        </div>
-      </header>
-    {% endif %}
+<div class="md-content">
+  {% if page.meta.title %}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      {% if page.meta.date %}
+      <time class="post-date">{{ page.meta.date }}</time>
+      {% endif %}
+      {% if page.meta.tags %}
+      <span class="post-tags">{% for t in page.meta.tags %}
+        <a class="tag" href="{{ base_url }}/tags/{{ t | replace(' ', '-') }}.html">{{ t }}</a>{% if not loop.last %}, {%
+        endif %}
+        {% endfor %}</span>
+      {% endif %}
+    </div>
+  </header>
+  {% endif %}
 
-    <article class="post-body">
-      {{ page.content }}
-    </article>
+  <article class="post-body">
+    {{ page.content }}
+  </article>
 
-    {# Tag/list pages: add small header if viewing a tag page #}
-    {% if page.url and page.url.startswith('tags/') %}
-      <div class="tag-page-note">Viewing posts for tag: <strong>{{ page.title }}</strong></div>
-    {% endif %}
+  {# Tag/list pages: add small header if viewing a tag page #}
+  {% if page.url and page.url.startswith('tags/') %}
+  <div class="tag-page-note">Viewing posts for tag: <strong>{{ page.title }}</strong></div>
+  {% endif %}
 
-    {# Simple share buttons for social platforms #}
-    {% if page.url %}
-      <div class="post-share" style="margin-top:1rem">
-        <a class="share-link" href="https://twitter.com/intent/tweet?text={{ page.title|urlencode }}&url={{ config.site_url.rstrip('/') }}/{{ page.url }}" target="_blank" rel="noopener">Share on Twitter</a>
-        &nbsp;•&nbsp;
-        <a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ config.site_url.rstrip('/') }}/{{ page.url }}" target="_blank" rel="noopener">Share on LinkedIn</a>
-      </div>
-    {% endif %}
+  {# Simple share buttons for social platforms #}
+  {% if page.url %}
+  <div class="post-share" style="margin-top:1rem">
+    <a class="share-link"
+      href="https://twitter.com/intent/tweet?text={{ page.title|urlencode }}&url={{ config.site_url.rstrip('/') }}/{{ page.url }}"
+      target="_blank" rel="noopener">Share on Twitter</a>
+    &nbsp;•&nbsp;
+    <a class="share-link"
+      href="https://www.linkedin.com/sharing/share-offsite/?url={{ config.site_url.rstrip('/') }}/{{ page.url }}"
+      target="_blank" rel="noopener">Share on LinkedIn</a>
   </div>
+  {% endif %}
+</div>
 {% endblock %}

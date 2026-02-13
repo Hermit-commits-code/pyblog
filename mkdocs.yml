@@ -11,7 +11,7 @@ nav:
   - Projects:
       - Origin-Miner: projects/origin-miner.md
   - About: about.md
-  
+
 theme:
   name: material
   # logo: assets/logo.png
@@ -34,9 +34,12 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
+    - navigation.sections
+    - navigation.indexes
     - navigation.tabs
     - navigation.top
     - content.code.copy
+    - content.action.edit
     - content.code.annotate
   icon:
     repo: fontawesome/brands/github
@@ -72,3 +75,6 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
+  - rss:
+      abstract_chars_count: 160
+      comments_path: "#__comments"

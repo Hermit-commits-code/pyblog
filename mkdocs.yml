@@ -6,8 +6,12 @@ site_author: Joe
 nav:
   - Home: index.md
   - Blog:
-      - Launching Origin-Miner: posts/origin-miner-case-study.md
-      - My First Post: posts/hello-world.md
+      - Project Series:
+          - 01. Launching Origin-Miner: posts/origin-miner-case-study.md
+          - 02. Exif-Eraser:
+              - Why Metadata Matters: posts/metadata-stripper-p1.md
+              - Solving Type Errors: posts/metadata-stripper-p2.md
+              - Full Implementation: posts/metadata-stripper-p3.md
   - Projects:
       - Origin-Miner: projects/origin-miner.md
   - About: about.md
@@ -36,6 +40,7 @@ theme:
   features:
     - navigation.sections
     - navigation.indexes
+    - navigation.expand
     - navigation.tabs
     - navigation.top
     - content.code.copy

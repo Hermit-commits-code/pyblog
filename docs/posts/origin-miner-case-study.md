@@ -1,3 +1,9 @@
+---
+tags:
+  - Python
+  - Git
+  - Forensics
+---
 # Forensic Git Auditing: Introducing Origin-Miner v1.0.1
 
 *Published: February 12, 2026*

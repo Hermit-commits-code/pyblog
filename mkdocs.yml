@@ -1,4 +1,5 @@
 site_name: Python Blog
+site_url: https://Hermit-commits-code.github.io/python-blog/
 site_description: Exploring Python, Forensics, and Automation.
 site_author: Joe
 
@@ -6,10 +7,9 @@ nav:
   - Home: index.md
   - Blog:
       - Launching Origin-Miner: posts/origin-miner-case-study.md
-      - Archive: posts/index.md
+      - My First Post: posts/hello-world.md
   - Projects:
       - Origin-Miner: projects/origin-miner.md
-  - About: about.md
 
 theme:
   name: material

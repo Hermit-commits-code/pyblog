@@ -2,6 +2,15 @@ site_name: Python Blog
 site_description: Exploring Python, Forensics, and Automation.
 site_author: Joe
 
+nav:
+  - Home: index.md
+  - Blog:
+      - Launching Origin-Miner: posts/origin-miner-case-study.md
+      - Archive: posts/index.md
+  - Projects:
+      - Origin-Miner: projects/origin-miner.md
+  - About: about.md
+
 theme:
   name: material
   palette:
@@ -26,13 +35,28 @@ theme:
     - navigation.top
     - content.code.copy
     - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+  extra:
+    social:
+      - icon: fontawesome/brands/github
+        link: https://github.com/Hermit-commits-code
+      - icon: fontawesome/brands/python
+        link: https://pypi.org/user/Hotcupofjoe
+      - icon: fontawesome/solid/paper-plane
+        link: mailto:hotcupofjoe2013@gmail.com
 
 markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 plugins:
   - search

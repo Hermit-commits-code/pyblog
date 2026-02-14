@@ -1,0 +1,2 @@
+Feb 13 03:00:01 server sshd[1234]: Accepted password for joe from 72.210.20.10
+Feb 13 03:10:01 server sshd[1235]: Accepted password for joe from 1.1.1.1

@@ -12,6 +12,10 @@ nav:
               - Why Metadata Matters: posts/metadata-stripper-p1.md
               - Solving Type Errors: posts/metadata-stripper-p2.md
               - Full Implementation: posts/metadata-stripper-p3.md
+          - 03. Log-Sieve:
+              - Detecting Impossible Travel: posts/log-sieve-p1.md
+              - Regex & Geo Ip: posts/log-sieve-p2.md
+              - The Impossible Verdict: posts/log-sieve-p3.md
   - Projects:
       - Origin-Miner: projects/origin-miner.md
   - About: about.md
